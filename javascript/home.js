@@ -29,16 +29,25 @@ function obterPersonagens(termoPesquisa = '') {
       const inicio = (paginaAtual - 1) * itensPorPagina;
       const fim = inicio + itensPorPagina;
       const personagensPaginados = personagens.slice(inicio, fim);
-
+      
       personagensPaginados.forEach(personagem => {
+        const status = document.createElement("p");
+        status.classList.add("personagem-status");
+
+        if(personagem.status === "Alive"){
+          valorTraduzido = "🟢 Vivo";
+        }else{
+          valorTraduzido = "🔴 Morto";
+        }
+        status.textContent = valorTraduzido + " - " + personagem.species;
         const cardPersonagem = `
-          <div class="col-md-4 mb-4">
-            <div class="card">
+          <div class="col-md-3 mb-4 teste">
+            <div class="card modeloCard">
               <img src="${personagem.image}" class="card-img-top" alt="${personagem.name}">
               <div class="card-body">
                 <h5 class="card-title">${personagem.name}</h5>
                 <p class="card-text">
-                  Status: ${personagem.status}<br>
+                  Status: ${valorTraduzido}<br>
                   Espécie: ${personagem.species}
                 </p>
               </div>
@@ -87,7 +96,6 @@ function contadorRodape() {
     axios.get(urlPersonagem).then(res => {
       const quantidadePersonagens = res.data.info.count;
       const quantidadePersonagensFooter = document.getElementById("quantidadePersonagens");
-      console.log(quantidadePersonagens)
       quantidadePersonagensFooter.textContent = "PERSONAGENS: " + quantidadePersonagens;
     });
   

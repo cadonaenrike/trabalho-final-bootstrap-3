@@ -5,42 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listagem de Personagens Rick and Morty</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/home.css">
 </head>
-<body>
-  <div class="container mt-4">
-    <h1>Listagem de Personagens Rick and Morty</h1>
-
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Pesquisar personagens" aria-label="Pesquisar personagens" id="campo-pesquisa">
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button">
-          <i class="fas fa-search"></i>
-        </button>
+<body class="fundoBody">
+  <header class="fundoHeader">
+    <div class="logoHeader">
+      <img class="rounded float-start m-1" src="/images/RICK_MORTY_ICON-01.svg">
+    </div>
+    <div class="container mt-4 ">
+      <h1 class="text-center titulo">API de Rick and Morty</h1>
+      <div class="input-group mb-3 col-12 ">
+        <input type="text" class="form-control mb-3 inputBusca" placeholder="Pesquise" aria-label="Pesquisar personagens" id="campo-pesquisa">
+        <div class="input-group-append">
+          <button class="btn mb-3 botaoBusca" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-
-    <div class="row" id="lista-personagens"></div>
-
-    <nav>
-      <ul class="pagination">
-        <li class="page-item" id="pagina-anterior">
-          <a class="page-link" href="#" aria-label="Página anterior">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Página anterior</span>
-          </a>
-        </li>
-        <li class="page-item" id="pagina-atual"></li>
-        <li class="page-item" id="proxima-pagina">
-          <a class="page-link" href="#" aria-label="Próxima página">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Próxima página</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-  <footer class="bg-dark text-white py-4">
+  </header>
+  <main class="fundoMain">
+    <div class="stars"></div>
+    <div class="container full-height">
+      <div class="row teste" id="lista-personagens">
+        <!-- Conteúdo da lista de personagens -->
+      </div>
+      <nav>
+        <ul class="pagination">
+          <li class="page-item" id="pagina-anterior">
+            <a class="page-link" href="#" aria-label="Página anterior">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Página anterior</span>
+            </a>
+          </li>
+          <li class="page-item" id="pagina-atual"></li>
+          <li class="page-item" id="proxima-pagina">
+            <a class="page-link" href="#" aria-label="Próxima página">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Próxima página</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+  
+  <footer class="fundoFotter py-4">
     <div class="container">
       <div class="row justify-content-center"> 
         <div class="col-md-2">
@@ -54,13 +66,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 text-center mt-4">
-          <p class="mb-0">
-            Desenvolvido por <a href="https://www.linkedin.com/in/everton-cadona" class="text-white font-weight-bold">Éverton Henrique Cadona</a> em 2023.
+        <div class="col-md-12 text-center mt-5 ">
+          <p class="mb-1 autorais">
+            Desenvolvido por <a href="https://www.linkedin.com/in/everton-cadona" class="autorais">Éverton Henrique Cadona</a> em 2023.
           </p>
         </div>
       </div>
     </div>
+    
   </footer>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="/javascript/home.js"></script>
