@@ -2,22 +2,75 @@
     margin: 0;
     padding: 0;
 }
-.logoHeader{
-    width: 50px;
-    height: 50px;
+/*HEADERR*/
+
+.logoHeader {
+  animation: zoomLogo 6s infinite;
+  width: 60px;
+  height: 60px;
 }
+
+@keyframes zoomLogo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/*MAINn*/
+
 .fundoBody{
-    background-color: rgb(36, 35, 35);
+    background-color: rgb(37, 37, 37);
 }
 .fundoHeader{
     background-color: white;
 }
-.fundoMain {
-    position: relative;
-    background: url(/images/FUNDO_2.jpg);
-    background-size: cover;
-    background-position: bottom;
+.surge{
+  animation: surgeapos 20s;
+}
+@keyframes surgeapos {
+  0% {
+    opacity: 0;
+
   }
+  100% {
+    opacity: 1;
+  }
+}
+.fundoMain {
+  position: relative;
+  background: url(/images/FUNDO_2.jpg);
+  background-size: cover;
+  background-position: bottom;
+  animation: fadeOut 10s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+
+  }
+  50% {
+    background-image: url(/images/FUNDO.jpg);
+  
+    
+  }
+  75% {
+    background-image: url(/images/FUNDO.jpg);
+   
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
   
   .logoAnimado {
     position: absolute;
@@ -63,12 +116,30 @@
     background-color: rgba(128, 255, 0, 0);
     color: white;
 }
+.botaoAnimado :hover{
+    border: none;
+    background: red;
+    zoom: 110%;
+}
 
-.titulo{
-  color: darkgreen;
+.titulo {
   text-align: center;
   font-size: 60px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  animation: mudaCor 15s infinite;
+}
+
+@keyframes mudaCor {
+  0% {
+    color: darkgreen;
+  }
+  50% {
+    color: rgb(98, 255, 0);
+  }
+  100% {
+    color: rgb(59, 78, 71);
+  }
 }
 .botaoBusca{
   border: 1.5px solid gray;
@@ -86,6 +157,10 @@
   border-right: none;
   border-radius: 10px 0px 0px 10px;
 }
+
+/*FOOTTER*/
+
+
 #episodio {
     font-weight: 700;
     color: darkgreen

@@ -46,7 +46,7 @@ function obterPersonagens(termoPesquisa = '') {
         `
           <div class="col-md-3 mb-4 imagecard">
             
-            <button type="button" class="btn " data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn botaoAnimado" data-toggle="modal" data-target="#exampleModal ">
               <div class="card modeloCard">
                 <img src="${personagem.image}" class="card-img-top" alt="${personagem.name}" >
                 <div class="card-body">
@@ -96,26 +96,6 @@ function atualizarPagina() {
   obterPersonagens();
 }
 
-// Função para ir para a próxima página
-function proximaPagina() {
-  if (paginaAtual < obterNumeroPaginas()) {
-    paginaAtual++;
-    atualizarPagina();
-  }
-}
-
-// Função para ir para a página anterior
-function paginaAnterior() {
-  if (paginaAtual > 1) {
-    paginaAtual--;
-    atualizarPagina();
-  }
-}
-
-// Função para obter o número total de páginas com base no total de personagens
-function obterNumeroPaginas() {
-  return Math.ceil(totalPersonagens / itensPorPagina);
-}
 
 
 ///////////////////////////////////////////////footer//////////////////////////////////////////
