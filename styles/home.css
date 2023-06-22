@@ -32,7 +32,7 @@
     background-color: white;
 }
 .surge{
-  animation: surgeapos 30s;
+  animation: surgeapos 20s;
 }
 @keyframes surgeapos {
   0% {
