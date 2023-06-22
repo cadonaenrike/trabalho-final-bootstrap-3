@@ -1,4 +1,5 @@
 window.onload = function() { contadorRodape(); };
+
 // Variáveis globais
 const itensPorPagina = 6; // Exibir 6 personagens por página
 let paginaAtual = 1;
@@ -31,6 +32,7 @@ function obterPersonagens(termoPesquisa = '') {
       const personagensPaginados = personagens.slice(inicio, fim);
       
       personagensPaginados.forEach(personagem => {
+        
         const status = document.createElement("p");
         status.classList.add("personagem-status");
 
@@ -40,28 +42,54 @@ function obterPersonagens(termoPesquisa = '') {
           valorTraduzido = "🔴 Morto";
         }
         status.textContent = valorTraduzido + " - " + personagem.species;
-        const cardPersonagem = `
-          <div class="col-md-3 mb-4 teste">
-            <div class="card modeloCard">
-              <img src="${personagem.image}" class="card-img-top" alt="${personagem.name}">
-              <div class="card-body">
-                <h5 class="card-title">${personagem.name}</h5>
-                <p class="card-text">
-                  Status: ${valorTraduzido}<br>
-                  Espécie: ${personagem.species}
-                </p>
+        const cardPersonagem = 
+        `
+          <div class="col-md-3 mb-4 imagecard">
+            
+            <button type="button" class="btn " data-toggle="modal" data-target="#exampleModal">
+              <div class="card modeloCard">
+                <img src="${personagem.image}" class="card-img-top" alt="${personagem.name}" >
+                <div class="card-body">
+                  <h5 class="card-title">${personagem.name}</h5>
+                  <p class="card-text">
+                    Status: ${valorTraduzido}<br>
+                    Espécie: ${personagem.species}
+                  </p>
+                </div>
               </div>
-            </div>
+              </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="${personagem.id}" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="${personagem.id}">${personagem.name}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="text-dark">Ultima localização conhecida: ${personagem.location.name} <br>
+                        Visto ultima vez no episodio: ${personagem.origin.name}
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-sucess" data-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           </div>
         `;
-
         listaPersonagens.innerHTML += cardPersonagem;
+        console.log(personagem)
       });
     })
     .catch(error => {
       console.log('Erro ao obter os personagens:', error);
     });
 }
+
+
 
 // Função para atualizar a página com base na página atual
 function atualizarPagina() {
@@ -126,4 +154,6 @@ function contadorRodape() {
     paginaAtual = 1;
     obterPersonagens(campoPesquisa.value.trim());
   });
+  
+
   

@@ -19,7 +19,7 @@
     background-position: bottom;
   }
   
-  .stars {
+  .logoAnimado {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@
     z-index: 1;
   }
   
-  @keyframes blinkStars {
+  @keyframes surgelogo {
     0% {
       opacity: 1;
     }
@@ -41,27 +41,29 @@
     }
   }
   
-  .stars:before {
+  .logoAnimado:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    animation: blinkStars 3s infinite;
+    animation: surgelogo 3s infinite;
     background: url(/images/FUNDO_3-LOGO.png);
     background-size: cover;
     background-position: bottom;
   }
   
-.teste{
+.ajusteModelo{
     margin-bottom: 50vh;
 }
+
 .modeloCard{
     border: 2px solid rgb(0, 255, 0);
     background-color: rgba(128, 255, 0, 0);
     color: white;
 }
+
 .titulo{
   color: darkgreen;
   text-align: center;
