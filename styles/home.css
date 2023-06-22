@@ -32,7 +32,7 @@
     background-color: white;
 }
 .surge{
-  animation: surgeapos 20s;
+  animation: surgeapos 30s;
 }
 @keyframes surgeapos {
   0% {
@@ -48,7 +48,7 @@
   background: url(/images/FUNDO_2.jpg);
   background-size: cover;
   background-position: bottom;
-  animation: fadeOut 10s;
+  animation: fadeOut 20s;
 }
 
 @keyframes fadeOut {
