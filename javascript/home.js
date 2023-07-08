@@ -11,7 +11,6 @@ const urlepisodio = "https://rickandmortyapi.com/api/episode";
 const urlLocalizacao = "https://rickandmortyapi.com/api/location";
 
 // Função para obter os dados dos personagens da API do Rick and Morty
-// Função para obter os dados dos personagens da API do Rick and Morty
 function obterPersonagens(termoPesquisa = '') {
   const parametrosPesquisa = termoPesquisa ? `?name=${termoPesquisa}` : '';
   const url = `https://rickandmortyapi.com/api/character/${parametrosPesquisa}`;
